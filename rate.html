@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style type="text/css">
+
+
+            .woof-sd-rate {
+                display: flex;
+            }
+            .woof-sd-rate > span {
+                display: inline-block;
+                float: right;
+                width: 1em;
+                overflow: hidden;
+                white-space: nowrap;
+                font-size: 1rem;
+                color :#ccc;
+            }
+            .woof-sd-rate span:before {
+                content: '★ ';
+            }
+            .woof-sd-rate > span[data-checked] {
+                color: #ffc700;
+            }
+
+        </style>
+    </head>
+    <body>
+
+
+        <div class="woof-sd-rate">
+            <span data-checked>5</span>
+            <span data-checked>4</span>
+            <span data-checked>3</span>
+            <span data-checked>2</span>
+            <span data-checked>1</span>
+        </div>
+
+
+
+
+    </body>
+</html>

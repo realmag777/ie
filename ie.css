@@ -1,0 +1,211 @@
+/*********************** Interactive Elements ****************************/
+
+:root {
+    --woof-sd-ie-border-radius: 1px;
+    --woof-sd-ie-border-width: 1px;
+    --woof-sd-ie-space: 9px;
+    --woof-sd-ie-space-color: #ffffff;
+    --woof-sd-ie-text-color: #ffffff;
+    --woof-sd-ie-text-size: 23px;
+    --woof-sd-ie-item-color: #79b8ff;
+    --woof-sd-ie-item-color-hover: #a9b8ff;
+    --woof-sd-ie-item-width: 120px;
+    --woof-sd-ie-item-height: 120px;
+    --woof-sd-ie-item-transition: 0;
+}
+
+/* container-wrapper for one element, not for design */
+.woof-sd-ie{
+    display: inline-block;
+    position: relative;
+}
+
+.woof-sd-ie-block{
+    display: block;
+}
+
+.woof-sd-ie > input{
+    display: none;
+}
+
+.woof-sd-ie > label{
+    display: flex;
+    flex-direction: row;
+    line-height: 0;
+    box-sizing: border-box;
+    border: var(--woof-sd-ie-border-width) solid var(--woof-sd-ie-item-color);
+    width: var(--woof-sd-ie-item-width);
+    height: var(--woof-sd-ie-item-height);
+    padding: var(--woof-sd-ie-space);
+    transition: all var(--woof-sd-ie-item-transition);
+    user-select: none;
+    border-radius: var(--woof-sd-ie-border-radius);
+    background-color: var(--woof-sd-ie-space-color);
+    margin: 0 0 15px 0;
+}
+
+.woof-sd-ie > span.woof-sd-ie-count{
+    position: absolute;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    line-height: 0;
+    right: 0;
+    top: 0;
+    box-sizing: border-box;
+    border: var(--woof-sd-ie-border-width) solid var(--woof-sd-ie-item-color);
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    background: #fff;
+}
+
+.woof-sd-ie:hover > label{
+    cursor: pointer;
+}
+
+.woof-sd-ie > label > span{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    flex-direction: column;
+    transition: all var(--woof-sd-ie-item-transition);
+    border-radius: calc(var(--woof-sd-ie-border-radius) - var(--woof-sd-ie-border-radius)/3);
+    font-size: var(--woof-sd-ie-text-size);
+    background-color: var(--woof-sd-ie-space-color);
+    color: var(--woof-sd-ie-item-color);
+}
+
+.woof-sd-ie > label > span > span{
+    display: inline-block;
+    align-self: center;
+    /* transition: all var(--woof-sd-ie-item-transition); */
+}
+
+.woof-sd-ie > input:checked + label > span{
+    background-color: var(--woof-sd-ie-item-color);
+}
+
+.woof-sd-ie > input:checked + label > span > span{
+    color: var(--woof-sd-ie-space-color);
+}
+
+.woof-sd-ie-title{
+    font-weight: normal;
+    align-self: center;
+    font-size: 18px;
+    line-height: 31px;
+    position: absolute;
+    margin-left: calc(var(--woof-sd-ie-item-width) - var(--woof-sd-ie-space) - var(--woof-sd-ie-border-width) + 15px);
+}
+
+
+/**************** radio **************************************/
+
+.woof-sd-ie.woof-sd-ie-radio > label,
+.woof-sd-ie.woof-sd-ie-radio > label > span{
+    border-radius: 100%;
+}
+
+.woof-sd-ie.woof-sd-ie-radio .woof-sd-ie-count{
+    border-radius: 100%;
+    right: 5px;
+    top: 10px;
+}
+
+
+/**************** checkbox2 **************************************/
+
+.woof-sd-ie.woof-sd-ie-checkbox2 > input:checked + label > span{
+    background-color: var(--woof-sd-ie-space-color);
+}
+
+.woof-sd-ie.woof-sd-ie-checkbox2 > input:checked + label > span:before{
+    content: "";
+    position: absolute;
+    box-sizing: content-box;
+    display: inline-block;
+    top: 0;
+    left: 30%;
+    height: 70%;
+    width: 35%;
+    border: 6px solid rgba(63, 85, 241, 0.5);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(-316deg);
+    border-image: url(https://demo.products-filter.com/wp-content/uploads/2016/01/autumn.jpg) 30 round;
+}
+
+
+/**************** color **************************************/
+
+.woof-sd-ie.woof-sd-ie-color > label > span,
+.woof-sd-ie.woof-sd-ie-color > input:checked + label > span{
+    background-color: var(--woof-sd-ie-label-bgcolor);
+}
+
+.woof-sd-ie.woof-sd-ie-color > label,
+.woof-sd-ie.woof-sd-ie-color > label > span,
+.woof-sd-ie.woof-sd-ie-color > input:checked + label > span{
+    /* border-radius: 100%; */
+}
+
+.woof-sd-ie.woof-sd-ie-color > label{
+    border-color: var(--woof-sd-ie-label-bgcolor);
+}
+
+.woof-sd-ie.woof-sd-ie-color > input:checked + label{
+    padding: 0;
+    border-width: calc(var(--woof-sd-ie-border-width) + var(--woof-sd-ie-space));
+    background-color: var(--woof-sd-ie-label-bgcolor);
+}
+
+.woof-sd-ie.woof-sd-ie-color .woof-sd-ie-count{
+    border-color: var(--woof-sd-ie-label-bgcolor);
+    color: var(--woof-sd-ie-label-bgcolor);
+}
+
+/**************** image **************************************/
+
+.woof-sd-ie.woof-sd-ie-img > label{
+    width: 260px;
+    filter: grayscale(95%);
+    border: none;
+}
+
+.woof-sd-ie.woof-sd-ie-img > label{
+    border-color: #e2e6e7;
+    /* border-image: var(--woof-sd-ie-label-img) 30 round; */
+    border-width: 2px;
+    padding: 3px;
+}
+
+.woof-sd-ie.woof-sd-ie-img > label > span,
+.woof-sd-ie.woof-sd-ie-img > input:checked + label > span{
+    background-image: var(--woof-sd-ie-label-img);
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.woof-sd-ie.woof-sd-ie-img > input:checked + label > span,
+.woof-sd-ie.woof-sd-ie-img:hover > label > span{
+    background: none;
+}
+
+.woof-sd-ie.woof-sd-ie-img > input:checked + label,
+.woof-sd-ie.woof-sd-ie-img:hover > label{
+    border-color: transparent;
+    border-radius: 15px;
+    background-image: var(--woof-sd-ie-label-img);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(0);
+}

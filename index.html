@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive element</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta http-equiv="expires" content="timestamp">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache" />
+
+
+
+
+        <link rel="stylesheet" href="ie.css">
+        <script src="ie.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function (event) {
+                let container = document.querySelector('.container');
+                let data = {
+                    1: {
+                        name: 'test1',
+                        count: 8,
+                        label_txt: 'XXL',
+                        title_txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    },
+                    2: {
+                        name: 'test1',
+                        count: 4,
+                        label_txt: 'XXX',
+                        title_txt: 'Cras ac nisi et orci convallis tempor non vitae diam.',
+                        selected: true
+                    },
+                    3: {
+                        name: 'test1',
+                        count: 99,
+                        label_txt: 'XXS',
+                        title_txt: 'Nullam lobortis aliquet consequat.'
+                    }
+                };
+
+                for (let t of Object.values(data)) {
+                    new WOOF_SD_IE(t, container);
+                }
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div style="max-width: 800px; width: 100%; margin: 0 auto 500px auto; padding-top: 200px">
+
+            <div class="container"></div>
+
+            <div class="woof-sd-ie woof-sd-ie-checkbox woof-sd-ie-checkbox2">
+                <input type="checkbox" name="role1" id="role01" checked onclick="console.log(this.checked)" />
+                <label for="role01">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-checkbox woof-sd-ie-checkbox2">
+                <input type="checkbox" name="role1" id="role02" onclick="console.log(this.checked)" />
+                <label for="role02">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-checkbox woof-sd-ie-checkbox2">
+                <input type="checkbox" name="role1" id="role03" onclick="console.log(this.checked)" />
+                <label for="role03">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+
+            <hr>
+
+            <div class="woof-sd-ie woof-sd-ie-checkbox">
+                <input type="checkbox" name="role1" id="role11" onclick="console.log(this.checked)" />
+                <label for="role11">
+                    <span>
+                        <span>L</span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-checkbox">
+                <input type="checkbox" name="role1" id="role12" checked onclick="console.log(this.checked)" />
+                <label for="role12">
+                    <span>
+                        <span>XL</span>
+                    </span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-checkbox">
+                <input type="checkbox" name="role1" id="role13" onclick="console.log(this.checked)" />
+                <label for="role13">
+                    <span>
+                        <span>XXL</span>
+                    </span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+
+            <hr>
+
+
+            <div class="woof-sd-ie woof-sd-ie-radio">
+                <input type="radio" name="role2" id="role21" checked onclick="console.log(this.checked)" />
+                <label for="role21">
+                    <span>
+                        <span>XXL1</span>
+                    </span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+
+            <div class="woof-sd-ie woof-sd-ie-radio">
+                <input type="radio" name="role2" id="role22" onclick="console.log(this.checked)" />
+                <label for="role22">
+                    <span>
+                        <span>XXL2</span>
+                    </span>
+                </label>
+                <span class="woof-sd-ie-count">9</span>
+            </div>
+
+
+            <hr>
+
+
+            <div class="woof-sd-ie woof-sd-ie-radio woof-sd-ie-block">
+                <input type="radio" name="role3" id="role31" checked="" />
+                <label for="role31">
+                    <span><span>A1</span></span>
+                    <b class="woof-sd-ie-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </b>
+                </label>
+                <span class="woof-sd-ie-count">99</span>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-radio woof-sd-ie-block">
+                <input type="radio" name="role3" id="role32" />
+                <label for="role32">
+                    <span><span>A2</span></span>
+                    <b class="woof-sd-ie-title">Madrid</b>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+
+            <div class="woof-sd-ie woof-sd-ie-radio woof-sd-ie-block">
+                <input type="radio" name="role3" id="role33" />
+                <label for="role33">
+                    <span><span>A3</span></span>
+                    <b class="woof-sd-ie-title">Barcelona</b>
+                </label>
+                <span class="woof-sd-ie-count">81</span>
+            </div>
+
+
+            <hr>
+
+
+            <div class="woof-sd-ie woof-sd-ie-color" style="--woof-sd-ie-label-bgcolor: red;">
+                <input type="checkbox" name="role3" id="role41" />
+                <label for="role41">
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-color" style="--woof-sd-ie-label-bgcolor: green;">
+                <input type="checkbox" name="role3" id="role42" />
+                <label for="role42">
+                    <span></span>
+                </label>
+            </div>
+
+
+            <div class="woof-sd-ie woof-sd-ie-color" style="--woof-sd-ie-label-bgcolor: blue;">
+                <input type="checkbox" name="role3" id="role43" />
+                <label for="role43">
+                    <span></span>
+                </label>
+            </div>
+
+
+            <hr>
+
+
+            <div class="woof-sd-ie woof-sd-ie-color woof-sd-ie-radio" style="--woof-sd-ie-label-bgcolor: red;">
+                <input type="radio" name="role3" id="role51" />
+                <label for="role51">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-color woof-sd-ie-radio" style="--woof-sd-ie-label-bgcolor: green;">
+                <input type="radio" name="role3" id="role52" />
+                <label for="role52">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+
+            <div class="woof-sd-ie woof-sd-ie-color woof-sd-ie-radio" style="--woof-sd-ie-label-bgcolor: blue;">
+                <input type="radio" name="role3" id="role53" />
+                <label for="role53">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+            <hr>
+
+
+            <div class="woof-sd-ie woof-sd-ie-img" style="--woof-sd-ie-label-img: url(https://demo.products-filter.com/wp-content/uploads/2016/01/spring.jpg);">
+                <input type="checkbox" name="role3" id="role61" />
+                <label for="role61">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+            <div class="woof-sd-ie woof-sd-ie-img" style="--woof-sd-ie-label-img: url(https://demo.products-filter.com/wp-content/uploads/2016/01/summer.jpg);">
+                <input type="checkbox" name="role3" id="role62" />
+                <label for="role62">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+
+            <div class="woof-sd-ie woof-sd-ie-img" style="--woof-sd-ie-label-img: url(https://demo.products-filter.com/wp-content/uploads/2016/01/autumn.jpg);">
+                <input type="checkbox" name="role3" id="role63" />
+                <label for="role63">
+                    <span></span>
+                </label>
+                <span class="woof-sd-ie-count">77</span>
+            </div>
+
+
+        </div>
+
+
+
+    </body>
+</html>
